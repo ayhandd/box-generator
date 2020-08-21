@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import DesignForm from './components/designForm';
+import DisplayBoxes from './components/displayBoxes'
 
 function App() {
+  const [results, setResults] = useState([]);
+  const [state, setState] = useState({
+    color:"",
+    height:"",
+    width:""
+  })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DesignForm state={state} setState={setState} results={results} setResults={setResults}/>
+      <DisplayBoxes state={state} results={results}/>
     </div>
   );
 }
