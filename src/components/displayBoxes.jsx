@@ -5,7 +5,11 @@ const DisplayBoxes = props =>{
     return(
         <div>
             {results && results.map((box, i)=>(
-                <div style={{backgroundColor: box.color, height: box.height, width: box.width}} key={i}></div>
+                <div  key={i}>
+                    <p>{box.color}</p>
+                    <p>{box.width}</p>
+                    <p>{box.height}</p>
+                </div>
             ))}
         </div>
 
